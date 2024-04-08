@@ -311,6 +311,7 @@ train308.wav,rock
 train309.wav,classical
 train310.wav,country
 train311.wav,metal
+train312.wav,jazz
 train313.wav,reggae
 train314.wav,hiphop
 train315.wav,metal
