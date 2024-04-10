@@ -29,3 +29,5 @@
 - Slim- preproc
 
 - Max and Ben- Figure out what you want/can do based on this and tell us soon please
+
+- ALSO everyone join Kaggle so I can add y'all to the team- if you don't I will leave you out of the screenshot for the HW submission lol.
