@@ -1,0 +1,365 @@
+Comparing files predictionsRF.csv and PREDICTIONSNN.CSV
+***** predictionsRF.csv
+test002.wav,country
+test003.wav,disco
+test004.wav,metal
+***** PREDICTIONSNN.CSV
+test002.wav,country
+test003.wav,metal
+test004.wav,metal
+*****
+
+***** predictionsRF.csv
+test005.wav,rock
+test006.wav,disco
+test007.wav,classical
+***** PREDICTIONSNN.CSV
+test005.wav,rock
+test006.wav,hiphop
+test007.wav,classical
+*****
+
+***** predictionsRF.csv
+test008.wav,blues
+test009.wav,blues
+test010.wav,disco
+test011.wav,metal
+test012.wav,hiphop
+***** PREDICTIONSNN.CSV
+test008.wav,blues
+test009.wav,jazz
+test010.wav,disco
+test011.wav,hiphop
+test012.wav,hiphop
+*****
+
+***** predictionsRF.csv
+test013.wav,disco
+test014.wav,blues
+test015.wav,blues
+test016.wav,metal
+test017.wav,disco
+test018.wav,pop
+test019.wav,reggae
+test020.wav,classical
+***** PREDICTIONSNN.CSV
+test013.wav,disco
+test014.wav,rock
+test015.wav,blues
+test016.wav,hiphop
+test017.wav,rock
+test018.wav,pop
+test019.wav,hiphop
+test020.wav,classical
+*****
+
+***** predictionsRF.csv
+test026.wav,country
+test027.wav,disco
+test028.wav,rock
+***** PREDICTIONSNN.CSV
+test026.wav,country
+test027.wav,hiphop
+test028.wav,rock
+*****
+
+***** predictionsRF.csv
+test035.wav,pop
+test036.wav,hiphop
+test037.wav,country
+test038.wav,classical
+test039.wav,country
+***** PREDICTIONSNN.CSV
+test035.wav,pop
+test036.wav,reggae
+test037.wav,jazz
+test038.wav,country
+test039.wav,country
+*****
+
+***** predictionsRF.csv
+test050.wav,metal
+test051.wav,metal
+test052.wav,reggae
+test053.wav,pop
+***** PREDICTIONSNN.CSV
+test050.wav,metal
+test051.wav,hiphop
+test052.wav,hiphop
+test053.wav,pop
+*****
+
+***** predictionsRF.csv
+test055.wav,reggae
+test056.wav,pop
+test057.wav,disco
+test058.wav,metal
+test059.wav,country
+***** PREDICTIONSNN.CSV
+test055.wav,reggae
+test056.wav,hiphop
+test057.wav,rock
+test058.wav,hiphop
+test059.wav,country
+*****
+
+***** predictionsRF.csv
+test065.wav,metal
+test066.wav,pop
+test067.wav,jazz
+***** PREDICTIONSNN.CSV
+test065.wav,metal
+test066.wav,hiphop
+test067.wav,jazz
+*****
+
+***** predictionsRF.csv
+test069.wav,metal
+test070.wav,rock
+test071.wav,metal
+***** PREDICTIONSNN.CSV
+test069.wav,metal
+test070.wav,jazz
+test071.wav,metal
+*****
+
+***** predictionsRF.csv
+test074.wav,country
+test075.wav,blues
+test076.wav,rock
+test077.wav,pop
+test078.wav,pop
+test079.wav,rock
+***** PREDICTIONSNN.CSV
+test074.wav,country
+test075.wav,hiphop
+test076.wav,country
+test077.wav,jazz
+test078.wav,rock
+test079.wav,rock
+*****
+
+***** predictionsRF.csv
+test081.wav,disco
+test082.wav,reggae
+test083.wav,country
+***** PREDICTIONSNN.CSV
+test081.wav,disco
+test082.wav,rock
+test083.wav,country
+*****
+
+***** predictionsRF.csv
+test084.wav,rock
+test085.wav,rock
+test086.wav,classical
+test087.wav,reggae
+test088.wav,rock
+test089.wav,hiphop
+***** PREDICTIONSNN.CSV
+test084.wav,rock
+test085.wav,country
+test086.wav,classical
+test087.wav,hiphop
+test088.wav,blues
+test089.wav,hiphop
+*****
+
+***** predictionsRF.csv
+test093.wav,metal
+test094.wav,blues
+test095.wav,classical
+***** PREDICTIONSNN.CSV
+test093.wav,metal
+test094.wav,reggae
+test095.wav,classical
+*****
+
+***** predictionsRF.csv
+test098.wav,pop
+test099.wav,country
+test100.wav,blues
+test101.wav,country
+***** PREDICTIONSNN.CSV
+test098.wav,pop
+test099.wav,reggae
+test100.wav,reggae
+test101.wav,country
+*****
+
+***** predictionsRF.csv
+test109.wav,classical
+test110.wav,country
+test111.wav,country
+test112.wav,disco
+test113.wav,classical
+***** PREDICTIONSNN.CSV
+test109.wav,classical
+test110.wav,hiphop
+test111.wav,country
+test112.wav,hiphop
+test113.wav,classical
+*****
+
+***** predictionsRF.csv
+test117.wav,metal
+test118.wav,metal
+test119.wav,jazz
+***** PREDICTIONSNN.CSV
+test117.wav,metal
+test118.wav,rock
+test119.wav,jazz
+*****
+
+***** predictionsRF.csv
+test121.wav,jazz
+test122.wav,disco
+test123.wav,hiphop
+***** PREDICTIONSNN.CSV
+test121.wav,jazz
+test122.wav,hiphop
+test123.wav,hiphop
+*****
+
+***** predictionsRF.csv
+test129.wav,classical
+test130.wav,classical
+test131.wav,reggae
+test132.wav,reggae
+test133.wav,reggae
+test134.wav,reggae
+***** PREDICTIONSNN.CSV
+test129.wav,classical
+test130.wav,jazz
+test131.wav,reggae
+test132.wav,rock
+test133.wav,blues
+test134.wav,reggae
+*****
+
+***** predictionsRF.csv
+test143.wav,disco
+test144.wav,disco
+test145.wav,reggae
+test146.wav,country
+test147.wav,disco
+test148.wav,metal
+***** PREDICTIONSNN.CSV
+test143.wav,disco
+test144.wav,blues
+test145.wav,reggae
+test146.wav,rock
+test147.wav,metal
+test148.wav,metal
+*****
+
+***** predictionsRF.csv
+test150.wav,jazz
+test151.wav,rock
+test152.wav,disco
+test153.wav,jazz
+***** PREDICTIONSNN.CSV
+test150.wav,jazz
+test151.wav,jazz
+test152.wav,rock
+test153.wav,jazz
+*****
+
+***** predictionsRF.csv
+test154.wav,metal
+test155.wav,disco
+test156.wav,pop
+test157.wav,jazz
+test158.wav,reggae
+test159.wav,country
+***** PREDICTIONSNN.CSV
+test154.wav,metal
+test155.wav,rock
+test156.wav,rock
+test157.wav,jazz
+test158.wav,rock
+test159.wav,country
+*****
+
+***** predictionsRF.csv
+test161.wav,classical
+test162.wav,reggae
+test163.wav,country
+test164.wav,rock
+test165.wav,disco
+test166.wav,blues
+test167.wav,classical
+test168.wav,jazz
+***** PREDICTIONSNN.CSV
+test161.wav,classical
+test162.wav,hiphop
+test163.wav,country
+test164.wav,blues
+test165.wav,hiphop
+test166.wav,blues
+test167.wav,country
+test168.wav,jazz
+*****
+
+***** predictionsRF.csv
+test172.wav,reggae
+test173.wav,metal
+test174.wav,blues
+test175.wav,pop
+test176.wav,rock
+test177.wav,blues
+***** PREDICTIONSNN.CSV
+test172.wav,reggae
+test173.wav,country
+test174.wav,blues
+test175.wav,reggae
+test176.wav,blues
+test177.wav,blues
+*****
+
+***** predictionsRF.csv
+test178.wav,metal
+test179.wav,disco
+test180.wav,disco
+test181.wav,disco
+test182.wav,country
+test183.wav,jazz
+***** PREDICTIONSNN.CSV
+test178.wav,metal
+test179.wav,metal
+test180.wav,hiphop
+test181.wav,hiphop
+test182.wav,blues
+test183.wav,jazz
+*****
+
+***** predictionsRF.csv
+test187.wav,country
+test188.wav,blues
+test189.wav,reggae
+***** PREDICTIONSNN.CSV
+test187.wav,country
+test188.wav,metal
+test189.wav,reggae
+*****
+
+***** predictionsRF.csv
+test191.wav,disco
+test192.wav,disco
+test193.wav,pop
+***** PREDICTIONSNN.CSV
+test191.wav,disco
+test192.wav,metal
+test193.wav,pop
+*****
+
+***** predictionsRF.csv
+test196.wav,classical
+test197.wav,disco
+test198.wav,metal
+***** PREDICTIONSNN.CSV
+test196.wav,classical
+test197.wav,jazz
+test198.wav,metal
+*****
+
