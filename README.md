@@ -75,12 +75,40 @@ This is a repository for collaboration on our ELEC 378 final project
 # Model Selection
 
 ## Neural Network
+### Description
+- One of our models is a Deep Neural Network. Deep Neural Networks are a type of machine learning model that are inspired by the structure of the human brain. They are composed of multiple layers of neurons, each of which takes input data and a set of weights. The neurons then apply an activation function to the weighted sum of the inputs to produce an output. The outputs of the neurons are then passed to the next layer, and so on. The weights of the neurons are learned through a process called backpropagation, which adjusts the weights to minimize the error between the predicted output and the true output. Deep Neural Networks are useful for tasks that require a high degree of nonlinearity, such as image and speech recognition.
+### Architecture
+### Tuning
+### Validation
+
+
 
 ## Logistic Regression
+### Description
+### Architecture
+### Tuning
+### Validation
+
+
 
 ## Random Forest
+### Description
+### Architecture
+### Tuning
+### Validation
+
 
 # Complete Pipeline
+The entire pipeline can be seen in the code that we submitted in the CNN code in that model’s section. But, as a summary, the pipeline could be summarized by the following. 
+1. Load the data
+2. Extract the features
+3. Aggregate the features
+4. Normalize the features
+5. Split the data into training and validation sets
+6. Train the model
+7. Validate the model
+8. Make predictions on the test data
+
 
 # Conclusions
 
@@ -103,4 +131,3 @@ https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0
     - Sam Lim
     - Thomas Pickell
     - Alex Zalles
-    - Ben Zhao
