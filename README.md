@@ -75,12 +75,37 @@ This is a repository for collaboration on our ELEC 378 final project
 # Model Selection
 
 ## Neural Network
+### Description
+- One of our models is a Deep Neural Network. Deep Neural Networks are a type of machine learning model that are inspired by the structure of the human brain. They are composed of multiple layers of neurons, each of which takes input data and a set of weights. The neurons then apply an activation function to the weighted sum of the inputs to produce an output. The outputs of the neurons are then passed to the next layer, and so on. The weights of the neurons are learned through a process called backpropagation, which adjusts the weights to minimize the error between the predicted output and the true output. Deep Neural Networks are useful for tasks that require a high degree of nonlinearity, such as image and speech recognition.
+### Architecture
+### Tuning
+### Validation
+
+
 
 ## Logistic Regression
+### Description
+### Architecture
+### Tuning
+### Validation
+
+
 
 ## Random Forest
+### Description
+### Architecture
+### Tuning
+### Validation
+
 
 # Complete Pipeline
+The entire pipeline can be seen in the code that we submitted in the CNN code in that model’s section. But, as a summary, the pipeline could be summarized by the following. 
+1. Pre-processing data- This included taking the data out of the files and putting them into a matrix that we could work with. For this section, we mainly used the provided skeleton code but with a few modifications. The first was we needed to convert all of the data to a single format in order to make it easier to use. Thus, we converted all of the data into mono as opposed to stereo so that it would be simpler to work with. It is important to note that we did normalize the data using a librosa load function. Then we needed to make sure each audio clip was the same size, so we found the shortest audio clip and cut each of the other clips so that they were all that length. Additionally, we looked at clipping out some of the silence at the beginning of the clip but found that it ultimately made the performance of our models worse. Then we took the data and split it into test data and training data. With the training data, we additionally split it into training data and validation data. 
+2. Feature extraction- While we considered many different features, see the feature section of the report, we ultimately choose to just utilize the mfcc feature and the spectral contrast feature. So, we extracted these two features and then put them into a data matrix that we would use for all of our models. In order to increase the amount of training data that we had, we flipped each of the audio clips and then fed those features into the matrix as well. 
+3. CNN Model- For a detailed look at the CNN model, see the section above detailing the CNN. 
+4. Hyper-parameter Tuning- For this we took the CNN and modified it in order to get better results. This included finding the sweet spot of number epochs (not enough and it isn’t 15accurate, too many and you overfit.) We also looked at tweaking the number of convolutional layers and ended up settling on 4. After that, it was tweaking the data that fed in (including every data point twice) to improve performance. We found that increasing the number of data points past this value only hurt the performance of the model.
+
+
 
 # Conclusions
 
@@ -103,4 +128,3 @@ https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0
     - Sam Lim
     - Thomas Pickell
     - Alex Zalles
-    - Ben Zhao
