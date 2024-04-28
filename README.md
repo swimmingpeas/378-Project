@@ -163,7 +163,7 @@ The entire pipeline can be seen in the code that we submitted in the CNN code in
 
 # Conclusions
 ## Future Improvements
-Something we experimented with but didn't implement in our final solution was preprocessing. The audio clips were given to us in 30 second segments, which we felt was too long. Some improvements would could have made include splitting up the audio clips into smaller segments. One idea we had was to potentially split it into 2 second clips, because the average measure in music is around 2 seconds. But if you think about it intuitively, it actually probably takes a person up to 5 or 7 seconds to recognize the genre of a song. So it would be best to play around with sections of 2 to 7 seconds. This process could have improved the quality of our model greatly, as we'd be able to feed it a larger volume of data.
+Something we experimented with but didn't implement in our final solution was preprocessing. The audio clips were given to us in 30 second segments, which we felt was too long. Some improvements would could have made include splitting up the audio clips into smaller segments. One idea we had was to potentially split it into 2 second clips, because on average (meaning looking at the 4/4, 3/4, 6/8 time signature) a measure. We felt that a measure would be a reasonable unit measure for music. But if you think about it intuitively, it actually probably takes a person up to 5 or 7 seconds to recognize the genre of a song. So it would be best to play around with sections of 2 to 7 seconds. This process could have improved the quality of our model greatly, as we'd be able to feed it a larger volume of data.
 ...WRITE MORE HERE
 
 ## Takeaways
