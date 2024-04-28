@@ -20,58 +20,82 @@ The link to the repo can be found [here](https://github.com/ThomasPickle7/378-Pr
 - we began by listening to a few of the samples. Most were high quality and easy to discern the genre. However there were a few that felt as though they could belong to multiple, or even none of those listed in the assignment description. This was useful to know, as it meant that an imperfect model may be expected.
 - Next, we read the files into Python in the form of numpy arrays. Checking the shape revealed that the audio files were 661,504, which is approximately 30 seconds of audio at a sample rate of 22,050 Hz. We also checked the sample rate of the audio files to confirm that it was 22,050 Hz. From this we knew that if we were going to extract features from the audio files, we would either need to reduce the size of the data by downsampling or splitting up the data, or use feature aggregation to reduce the size of the data.
 - We then plotted some of the audio file's time and frequency domain representations. This was done to get a better understanding of the data and to see if there were any obvious differences between the genres in the time and frequency domains. We found that the time domain representations were very similar between the genres, but the frequency domain representations were different. This was expected, as things like percussive instruments, rhythm and tempo are more easily discerned in the frequency domain.
-**MAKE PLOTS FOR ALL OF THIS STUFF**
+
+- This shows the time-domain graph of song 1, both the full 30 seconds, as well as zoomed in to the first 5 seconds.
+- The data in this form hasn't been processed enough to directly classify based on it, so we needed to extract features for the models to train based on
+![images](/visualizations/raw-audio-signal-time-series.png)
+![images](/visualizations/raw-audio-signal-time-series-zoomed.png)
+
+- Below are the fourier transforms of several songs, where you can see that there are visible differences in the spectra of each song
+![image](/visualizations/fast-fourier-transform-song-1.png)
+![image](/visualizations/fast-fourier-transform-song-2.png)
+![image](/visualizations/fast-fourier-transform-song-3.png)
+![image](/visualizations/fast-fourier-transform-song-4.png)
+
 
 # Features
 
 ## Extracted Features
 - These are features that are extracted through charachteristics of a sample's freuqency domain representation. They are represented as numpy arrays, where the ith element corresponds to the ith frequency band. The value of each element is the feature of the sample in that frequency band.
-### centroids
+### Centroids
 - The spectral centroid indicates at which frequency the energy of a spectrum is centered upon. This is like a weighted mean:
 - This is useful for determining where the "center of mass" of the spectrum is, which can determine how "bright" or "dark" a sound is.\
+- The image below shows the spectral centroid as a black line along a 30 second song clip, overlaid with both the spectrum and the bandwidth (shown as centroid +- bandwidth)
 ![image](visualizations/spectral-bandwidth-centroid-log-power-spectrogram.png)
-### rolloff
+### Rolloff
 - The spectral rolloff is the frequency below which some amount of the total energy of the spectrum is contained, in Librosa's case, 85%.
 - Since the rolloff indicates where the majority of the energy of the spectrum is useful in analyzing where the "body" of the sound is.
+- This can be used to find both lower and upper bounds on the energy, as shown below with the gray line showing the bottom 15% of the energy, and the black line the default 85% of the energy.
 ![image](visualizations/spectral-rolloff-mel-spectrogram.png)
-### bandwidth
+### Bandwidth
 - The spectral bandwidth is the width of the band of frequencies in which the energy of the spectrum is concentrated.
 - This is useful for determining how "sharp" or "dull" a sound is.
+![image](visualizations/spectral-bandwidth.png)
+- The image above shows the raw bandwidth as returned from Librosa, while the image below shows the same bandwidth overlaid on the centroid-spectrogram graph from above
 ![image](visualizations/spectral-bandwidth-centroid-log-power-spectrogram.png)
-### contrast
+### Contrast
 - The spectral contrast is the difference in amplitude between peaks and valleys in a given frequency band.
 - This indicates the "sharpness" of the sound, as higher contrast between similar frequencies indicates a sharper sound.
-![image](visualizations/spectral-contrast.png)
+- The image below shows the spectral contrast for the first five seconds of the same audio clip as the rest of the examples
+![image](visualizations/spectral-contrast-zoomed.png)
 ### Flatness
 - The spectral flatness is a measure of how "flat" the spectrum is. A flat spectrum has equal energy at all frequencies. For reference, white noise has a flatness of 1, while a pure tone has a flatness of 0.
 - This is useful for determining how "noisy" a sound is.
 ![image](visualizations/spectral-flatness.png)
-### chroma stft
+### RMS Energy
+- This computes the root mean square energy of each time in the audio sample
+- It is usefull for gauging volume of the audio sample, which could benefit the models since certain genres of music are generally louder, but the audio recording quality of the music could have a negative impact on the useability of this data for each particular sample
+- The RMS Energy for the example song sample is shown below
+![image](/visualizations/rms.png)
+### Chroma STFT (Short-Time Fourier Transform)
 - The chroma stft is a 12-element vector that represents the energy of each of the 12 chroma bands.
 - This is useful for determining the "color" of the sound, as it represents the energy of each of the 12 chroma bands.
-![image](visualizations
+![image](visualizations/chroma-stft.png)
 ### Zero crossing rate
 - The zero crossing rate is the rate at which a signal changes sign.
 - This is useful for determining the noisiness of a sound, as noisier sounds tend to have a higher zero crossing rate. It is also useful for determining the pitch of a sound, as the zero crossing rate is higher for higher pitched sounds.
-![image](visualizations/
 ### MFCC
 - The Mel-frequency cepstral coefficients are a representation of the short-term power spectrum of a sound. They are derived from the Fourier transform of the sound.
 - These are useful for determining the timbre of a sound, as they represent the power spectrum of the sound.
+- The image below shows the mel-frequency cepstral coefficients for the first five seconds of an audio clip
 ![image](visualizations/mfcc-with-mel-spectrogram.png)
 ### Tonnetz
 - The tonnetz is a 6-element vector that represents the tonal centroid features of a sound. The tonal centroid is the weighted mean of the frequencies of the sound.
 - This is useful for determining the tonal characteristics of a sound, as it represents the tonal centroid features of the sound.
+- The graphs below compare the tonnetz with the Chroma STFT, providing a side-by-side view of how the tonnetz isolates the tonal centroid
 ![image](visualizations/tonnetz-compared-with-chroma-stft.png)
 ## Musical Features 
 - These features are extracted from the time domain, and are represented as numpy arrays, where the ith element corresponds to the ith time frame. The value of each element is the feature of the sample in that time frame.
 ### Tempo
 - Tempo is the speed at which a piece of music is played, and it's measured in BPM (beats per minute).
 - This is useful, as different genres of music tend to have different tempos. For example, classical music tends to have a slower tempo, while rock music tends to have a faster tempo.
-![image](visualizations
 ### Harmonic/Percussive
 - Harmonic and percussive components are extracted from the audio signal using the Harmonic-Percussive Source Separation (HPSS) algorithm.
 - This is useful for determining the harmonic and percussive components of a sound, as they are often used to distinguish between different genres of music.
-![image](visualizations/
+- The percussive component can be analyzed for tempo more accurately, while the harmonic component was then fed through the Chroma CQT algorithm to analyze
+#### Chroma CQT
+- The Chroma CQT function provided by Librosa is a constant-Q chromagram. A comparison between the Chroma CQT and the Chroma STFT is shown below
+![image](visualizations/chroma-cqt-vs-chroma-stft.png)
 ### Beat Strength
 - Beat strength is a measure of the strength of the beat in a piece of music. By beat stregnth, we mean the degree to which a beat is emphasized compared to the rest of the music.
 - This is useful for determining the rhythm features of a sound, as different genres of music will use different time signatures more often and also make use of different rhythm patterns.
