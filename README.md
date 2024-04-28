@@ -17,11 +17,11 @@ The link to the repo can be found [here](https://github.com/ThomasPickle7/378-Pr
 
 # Data Exploration
 - The data is stored in the 'train' and 'test' folders. Each folder contains 10 subfolders, each corresponding to a different genre of music. Each subfolder contains 100 audio files of 30 seconds each. The audio files are in .wav format.
-- we began by listening to a few of the samples. Most were high quality and easy to discern the genre. However there were a few that felt as though they could belong to multiple, or even none of those listed in the assignment description. This was useful to know, as it meant that an imperfect model may be expected.
+- we began by listening to a few of the samples. Most were high-quality and easy to discern the genre. However there were a few that felt as though they could belong to multiple, or even none of those listed in the assignment description. This was useful to know before starting, as it meant that an imperfect model may be expected, and that we would need to find a way to quantify the uncertainty of our model's predictions.
 - Next, we read the files into Python in the form of numpy arrays. Checking the shape revealed that the audio files were 661,504, which is approximately 30 seconds of audio at a sample rate of 22,050 Hz. We also checked the sample rate of the audio files to confirm that it was 22,050 Hz. From this we knew that if we were going to extract features from the audio files, we would either need to reduce the size of the data by downsampling or splitting up the data, or use feature aggregation to reduce the size of the data.
 - We then plotted some of the audio file's time and frequency domain representations. This was done to get a better understanding of the data and to see if there were any obvious differences between the genres in the time and frequency domains. We found that the time domain representations were very similar between the genres, but the frequency domain representations were different. This was expected, as things like percussive instruments, rhythm and tempo are more easily discerned in the frequency domain.
 <br></br>
-This shows the time-domain graph of song 1, both the full 30 seconds, as well as zoomed in to the first 5 seconds. The data in this form hasn't been processed enough to directly classify based on it, so we needed to extract features for the models to train based on
+This shows the time-domain graph of song 1, both the full 30 seconds, as well as zoomed in to the first 5 seconds. The data in this form hasn't been processed enough to directly classify based on it, so we needed to extract features for the models to train based on.
 ![images](/visualizations/raw-audio-signal-time-series.png)
 ![images](/visualizations/raw-audio-signal-time-series-zoomed.png)
 <br></br>
@@ -35,14 +35,14 @@ Below are the fourier transforms of several songs, where you can see that there 
 # Features
 
 ## Extracted Features
-- These are features that are extracted through charachteristics of a sample's freuqency domain representation. They are represented as numpy arrays, where the ith element corresponds to the ith frequency band. The value of each element is the feature of the sample in that frequency band.
+- Since we're working with audio signals, we knew that the best place to look for features would be in the frequency domain. We used the Librosa library to extract most of our features. these included structural features, such as tempo, and timbral features, such as the Mel-frequency cepstral coefficients. Below is a list of the features we extracted, along with a brief description of each.
 ### Centroids
 - The spectral centroid indicates at which frequency the energy of a spectrum is centered upon. This is like a weighted mean:
 - This is useful for determining where the "center of mass" of the spectrum is, which can determine how "bright" or "dark" a sound is.\
 - The image below shows the spectral centroid as a black line along a 30 second song clip, overlaid with both the spectrum and the bandwidth (shown as centroid +- bandwidth)
 ![image](visualizations/spectral-bandwidth-centroid-log-power-spectrogram.png)
 ### Rolloff
-- The spectral rolloff is the frequency below which some amount of the total energy of the spectrum is contained, in Librosa's case, 85%.
+- The spectral rolloff is the frequency below which some amount of the total energy of the spectrum is contained.
 - Since the rolloff indicates where the majority of the energy of the spectrum is useful in analyzing where the "body" of the sound is.
 - This can be used to find both lower and upper bounds on the energy, as shown below with the gray line showing the bottom 15% of the energy, and the black line the default 85% of the energy.
 ![image](visualizations/spectral-rolloff-mel-spectrogram.png)
@@ -133,6 +133,7 @@ Below are the fourier transforms of several songs, where you can see that there 
 
 
 ## Logistic Regression
+- Logistic regression is a type of regression analysis used to predict the outcome of a categorical dependent variable based on one or more predictor variables. This can be extended to accomodate multiple classes, in what's called Multinomial Linear Regression. In our case, we used the multinomial logistic regression model to predict the genre of a song based on the features we extracted from the audio files. The model works by taking the features as input and outputting the probability of the song belonging to each genre. The genre with the highest probability is then chosen as the predicted genre of the song. The model is trained by adjusting the weights of the features to minimize the error between the predicted genre and the true genre of the song. The model is then validated on a separate set of data to ensure that it generalizes well to unseen data.
 ### Description
 ### Architecture
 ### Tuning
