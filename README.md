@@ -20,11 +20,11 @@ The link to the repo can be found [here](https://github.com/ThomasPickle7/378-Pr
 - we began by listening to a few of the samples. Most were high quality and easy to discern the genre. However there were a few that felt as though they could belong to multiple, or even none of those listed in the assignment description. This was useful to know, as it meant that an imperfect model may be expected.
 - Next, we read the files into Python in the form of numpy arrays. Checking the shape revealed that the audio files were 661,504, which is approximately 30 seconds of audio at a sample rate of 22,050 Hz. We also checked the sample rate of the audio files to confirm that it was 22,050 Hz. From this we knew that if we were going to extract features from the audio files, we would either need to reduce the size of the data by downsampling or splitting up the data, or use feature aggregation to reduce the size of the data.
 - We then plotted some of the audio file's time and frequency domain representations. This was done to get a better understanding of the data and to see if there were any obvious differences between the genres in the time and frequency domains. We found that the time domain representations were very similar between the genres, but the frequency domain representations were different. This was expected, as things like percussive instruments, rhythm and tempo are more easily discerned in the frequency domain.
-\ 
+<br></br>
 - This shows the time-domain graph of song 1, both the full 30 seconds, as well as zoomed in to the first 5 seconds. The data in this form hasn't been processed enough to directly classify based on it, so we needed to extract features for the models to train based on
 ![images](/visualizations/raw-audio-signal-time-series.png)
 ![images](/visualizations/raw-audio-signal-time-series-zoomed.png)
-\ 
+<br></br>
 - Below are the fourier transforms of several songs, where you can see that there are visible differences in the spectra of each song
 ![image](/visualizations/fast-fourier-transform-song-1.png)
 ![image](/visualizations/fast-fourier-transform-song-2.png)
