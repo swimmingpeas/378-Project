@@ -142,6 +142,13 @@ Below are the fourier transforms of several songs, where you can see that there 
 
 ## Random Forest
 ### Description
+- For the model which we did not learn about in class, we selected the Random Forest Classifier. Through our description of the model we will outline why we think it is a good fit for the data, but before that we wanted to include some helpful links to read about that supported our understanding and implementation of the model. If you have further questions, these are all good places to look.
+- https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html (what we used for implementation)
+- https://www.ibm.com/topics/random-forest
+- https://en.wikipedia.org/wiki/Random_forest
+- https://en.wikipedia.org/wiki/Decision_tree_learning
+
+- 
 ### Architecture
 ### Tuning
 ## Validation
